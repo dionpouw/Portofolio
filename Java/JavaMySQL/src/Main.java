@@ -18,7 +18,7 @@ public class Main {
                 Utils.getInput();
                 int choices = Integer.parseInt(br.readLine());
                 switch (choices) {
-                    case 1 -> {
+                    case 1: {
                         System.out.println();
                         System.out.print("Enter title : ");
                         String title = br.readLine();
@@ -26,8 +26,9 @@ public class Main {
                         String content = br.readLine();
                         DailyDevotion dailyDevotion = new DailyDevotion(title, content);
                         database.insertData(dailyDevotion);
+                        break;
                     }
-                    case 2 -> {
+                    case 2: {
                         System.out.println();
                         ResultSet rs = database.getData(database.getConnection());
                         while (rs.next()) {
@@ -36,8 +37,9 @@ public class Main {
                             System.out.println("Content: " + rs.getString("content"));
                             System.out.println();
                         }
+                        break;
                     }
-                    case 3 -> {
+                    case 3: {
                         System.out.println();
                         System.out.print("Enter id : ");
                         int id = Integer.parseInt(br.readLine());
@@ -47,14 +49,18 @@ public class Main {
                         String content = br.readLine();
                         DailyDevotion dailyDevotion = new DailyDevotion(title, content);
                         database.updateData(dailyDevotion, id);
+                        break;
                     }
-                    case 4 -> {
+                    case 4: {
                         System.out.println();
                         System.out.print("Enter id : ");
                         int id = Integer.parseInt(br.readLine());
                         database.deleteData(id);
+                        break;
                     }
-                    case 5 -> System.exit(0);
+                    case 5:
+                        System.exit(0);
+                        break;
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
