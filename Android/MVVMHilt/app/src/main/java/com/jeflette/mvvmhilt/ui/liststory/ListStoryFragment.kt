@@ -7,8 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jeflette.mvvmhilt.R
+import com.jeflette.mvvmhilt.databinding.FragmentListStoryBinding
 
 class ListStoryFragment : Fragment() {
+
+    private var _binding :FragmentListStoryBinding? = null
+    private val binding get() = _binding!!
 
     companion object {
         fun newInstance() = ListStoryFragment()
@@ -20,7 +24,8 @@ class ListStoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_list_story, container, false)
+        _binding = FragmentListStoryBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

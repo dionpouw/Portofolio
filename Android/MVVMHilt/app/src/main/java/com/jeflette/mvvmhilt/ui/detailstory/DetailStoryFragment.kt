@@ -1,4 +1,4 @@
-package com.jeflette.mvvmhilt.ui.login
+package com.jeflette.mvvmhilt.ui.detailstory
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,31 +6,35 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.jeflette.mvvmhilt.databinding.FragmentLoginBinding
+import com.jeflette.mvvmhilt.databinding.FragmentDetailStoryBinding
 
-class LoginFragment : Fragment() {
+class DetailStoryFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentDetailStoryBinding? = null
     private val binding get() = _binding!!
 
     companion object {
-        fun newInstance() = LoginFragment()
+        fun newInstance() = DetailStoryFragment()
     }
 
-    private lateinit var viewModel: LoginViewModel
+    private lateinit var viewModel: DetailStoryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailStoryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(DetailStoryViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }
