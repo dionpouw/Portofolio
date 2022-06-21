@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.jeflette.mvvmhilt">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:name=".BaseApplication"
+        android:name="com.jeflette.mvvmhilt.BaseApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,7 +17,7 @@
         android:theme="@style/Theme.MVVMHilt"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.jeflette.mvvmhilt.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
