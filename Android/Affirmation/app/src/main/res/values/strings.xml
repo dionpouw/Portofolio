@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Affirmation</string>
+    <string name="new_quote">New Quote</string>
+    <string name="action_change_to_rv">RecyclerView</string>
+</resources>
