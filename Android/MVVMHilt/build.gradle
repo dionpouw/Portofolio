@@ -3,9 +3,13 @@
 buildscript {
     ext {
         room_version = "2.4.2"
+        camerax_version = "1.2.0-alpha02"
     }
     dependencies {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
+    }
+    repositories {
+        google()
     }
 }
 

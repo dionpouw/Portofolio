@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">StoryApps</string>
+    <string name="image_of_story">Image of Story</string>
+    <string name="my_story_your_story">My Story - Your story</string>
+    <string name="image_authentication_logo">image_authentication_logo</string>
+    <string name="post_your_story_the_the_world">Post your story the world!</string>
+    <string name="login">Login</string>
+    <string name="register">Don\'t have account? register</string>
+    <string name="btn_register">Register</string>
+    <string name="jeflette_developer">JeFlette Developer</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_password">Password</string>
+    <string name="enter_name">Name</string>
+    <string name="camera_x">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="upload">Upload</string>
+</resources>

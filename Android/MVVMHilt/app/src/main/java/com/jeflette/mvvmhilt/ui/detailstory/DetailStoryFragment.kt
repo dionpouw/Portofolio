@@ -14,10 +14,8 @@ class DetailStoryFragment : Fragment() {
     private val binding get() = _binding!!
 
     companion object {
-        fun newInstance() = DetailStoryFragment()
+        const val STORY = "story"
     }
-
-    private lateinit var viewModel: DetailStoryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +27,6 @@ class DetailStoryFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DetailStoryViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

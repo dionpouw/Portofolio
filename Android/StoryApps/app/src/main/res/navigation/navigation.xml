@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/addStory">
+
+    <fragment
+        android:id="@+id/addStory"
+        android:name="com.jeflette.storyapps.ui.addstory.AddStory"
+        android:label="fragment_add_story"
+        tools:layout="@layout/fragment_add_story" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.jeflette.storyapps.ui.camera.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/listStoryFragment"
+        android:name="com.jeflette.storyapps.ui.liststory.ListStoryFragment"
+        android:label="fragment_list_story"
+        tools:layout="@layout/fragment_list_story" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.jeflette.storyapps.ui.login.LoginFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <activity
+        android:id="@+id/storyAppActivity"
+        android:name="com.jeflette.storyapps.ui.StoryAppActivity"
+        android:label="activity_story_app_application"
+        tools:layout="@layout/activity_story_app_application" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.jeflette.storyapps.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.jeflette.storyapps.ui.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" />
+</navigation>
