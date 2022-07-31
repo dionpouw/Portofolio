@@ -1,7 +1,0 @@
-package com.jeflette.mvvmhilt.ui.camera
-
-import androidx.lifecycle.ViewModel
-
-class CameraViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
-}
