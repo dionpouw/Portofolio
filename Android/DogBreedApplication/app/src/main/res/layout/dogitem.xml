@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
-    app:cardElevation="10dp">
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/itemImage"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:contentDescription="@string/dog_image"
@@ -19,6 +21,7 @@
             tools:src="@tools:sample/avatars" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/itemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start|bottom"
