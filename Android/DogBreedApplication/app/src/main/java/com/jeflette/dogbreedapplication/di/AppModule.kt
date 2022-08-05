@@ -6,6 +6,7 @@ import com.jeflette.dogbreedapplication.BuildConfig
 import com.jeflette.dogbreedapplication.data.local.room.DogsDatabase
 import com.jeflette.dogbreedapplication.network.ApiService
 import com.jeflette.dogbreedapplication.util.Constant
+import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -15,7 +16,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
-@Singleton
+@Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
