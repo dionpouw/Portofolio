@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DogBreedApplication</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="dog_image">Dog Image</string>
+    <string name="no_dogs_found">No dogs found</string>
+    <string name="back_button">Back Button</string>
 </resources>
