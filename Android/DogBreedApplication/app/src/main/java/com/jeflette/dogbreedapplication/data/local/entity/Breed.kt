@@ -51,5 +51,7 @@ data class Breed(
     val description: String? = null,
 
     @Json(name = "origin")
-    val origin: String? = null
+    val origin: String? = null,
+
+    var isFavorite: Boolean = false
 ) : Parcelable
