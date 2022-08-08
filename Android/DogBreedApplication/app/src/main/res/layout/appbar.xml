@@ -13,8 +13,6 @@
         android:gravity="center"
         android:textColor="?android:colorPrimary"
         android:textSize="@dimen/text_size_xlarge"
-        tools:text="Dog Encyclopedia" />
-
-
+        android:text="@string/dog_encyclopedia" />
 
 </com.google.android.material.appbar.AppBarLayout>
