@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET("breeds")
-    suspend fun getBreedList(): BreedResponse
+    suspend fun getBreedList(): List<BreedResponse>
 
     @GET("breeds/search")
     suspend fun getSearchBreed(
