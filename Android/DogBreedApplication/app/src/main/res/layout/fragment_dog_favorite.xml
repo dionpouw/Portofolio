@@ -20,8 +20,9 @@
             android:background="?android:windowBackground"
             android:fontFamily="@font/dm_sans_bold"
             android:gravity="center"
-            android:textSize="@dimen/text_size_xlarge"
-            tools:text="Favourite Dogs" />
+            android:text="@string/favourite_dogs"
+            android:textColor="?android:colorPrimary"
+            android:textSize="@dimen/text_size_xlarge" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -48,6 +49,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/no_dogs_found" />
+        android:text="@string/no_dogs_found" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
