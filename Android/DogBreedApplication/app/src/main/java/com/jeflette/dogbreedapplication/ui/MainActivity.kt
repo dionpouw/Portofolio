@@ -3,7 +3,6 @@ package com.jeflette.dogbreedapplication.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.jeflette.dogbreedapplication.R
 import com.jeflette.dogbreedapplication.databinding.ActivityMainBinding
@@ -23,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         binding?.navigation?.setupWithNavController(navHostController)
+        supportActionBar?.hide()
     }
 
     override fun onDestroy() {
