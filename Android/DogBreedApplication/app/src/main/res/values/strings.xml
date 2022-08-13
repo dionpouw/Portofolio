@@ -9,4 +9,6 @@
     <string name="dog_encyclopedia">Dog Encyclopedia</string>
     <string name="there_is_no_data">There is no data</string>
     <string name="bookmark">Bookmark</string>
+    <string name="breed_details">Breed Details</string>
+    <string name="favourite_dogs">Favourite Dogs</string>
 </resources>
