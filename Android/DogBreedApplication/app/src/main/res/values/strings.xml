@@ -6,4 +6,7 @@
     <string name="dog_image">Dog Image</string>
     <string name="no_dogs_found">No dogs found</string>
     <string name="back_button">Back Button</string>
+    <string name="dog_encyclopedia">Dog Encyclopedia</string>
+    <string name="there_is_no_data">There is no data</string>
+    <string name="bookmark">Bookmark</string>
 </resources>
