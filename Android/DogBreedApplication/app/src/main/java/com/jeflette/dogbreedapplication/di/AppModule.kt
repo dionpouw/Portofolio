@@ -23,15 +23,15 @@ object AppModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(): OkHttpClient = if (BuildConfig.DEBUG) {
-        val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-
         OkHttpClient.Builder().addInterceptor { chain ->
             val request = chain.request().newBuilder()
                 .addHeader("x-api-key", Constant.apiKey)
                 .build()
             chain.proceed(request)
-        }.addInterceptor(loggingInterceptor).build()
+        }.addInterceptor(
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        )
+            .build()
 
     } else {
         OkHttpClient.Builder().addInterceptor { chain ->
