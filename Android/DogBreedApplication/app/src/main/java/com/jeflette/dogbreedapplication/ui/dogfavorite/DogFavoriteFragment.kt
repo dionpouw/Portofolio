@@ -1,32 +1,50 @@
 package com.jeflette.dogbreedapplication.ui.dogfavorite
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jeflette.dogbreedapplication.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.jeflette.dogbreedapplication.databinding.FragmentDogFavoriteBinding
+import com.jeflette.dogbreedapplication.ui.adapter.BaseAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DogFavoriteFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = DogFavoriteFragment()
-    }
-
-    private lateinit var viewModel: DogFavoriteViewModel
+    private val viewModel: DogFavoriteViewModel by viewModels()
+    private var _binding: FragmentDogFavoriteBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_dog_favorite, container, false)
+    ): View {
+        _binding = FragmentDogFavoriteBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DogFavoriteViewModel::class.java)
-        // TODO: Use the ViewModel
+        val dogsBreedAdapter = BaseAdapter()
+
+        binding.apply {
+            recyclerView.apply {
+                adapter = dogsBreedAdapter
+                layoutManager = LinearLayoutManager(context)
+            }
+            viewModel.getFavoriteDogs()
+            viewModel.dogFavorite.observe(viewLifecycleOwner) {
+                dogsBreedAdapter.setItem(it)
+            }
+        }
     }
 
+
+    override fun onDetach() {
+        super.onDetach()
+        _binding = null
+    }
 }
