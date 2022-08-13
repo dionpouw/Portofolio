@@ -14,8 +14,8 @@ class DogListViewModel @Inject constructor(
 
     val dogResponse = repository.getBreeds().asLiveData()
 
-    private val dogsLiveData = MutableLiveData<SearchResponse?>()
-    val breeds: LiveData<SearchResponse?> = dogsLiveData
+    private val dogsLiveData = MutableLiveData<List<SearchResponse>?>()
+    val breeds: LiveData<List<SearchResponse>?> = dogsLiveData
 
     private val isLoadingLiveData = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = isLoadingLiveData
@@ -27,5 +27,4 @@ class DogListViewModel @Inject constructor(
             isLoadingLiveData.value = false
         }
     }
-
 }
