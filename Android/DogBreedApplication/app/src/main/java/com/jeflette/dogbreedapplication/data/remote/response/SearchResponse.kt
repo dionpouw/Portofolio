@@ -9,13 +9,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class SearchResponse(
 
-    @Json(name = "SearchResponse")
-    val searchResponse: List<SearchResponseItem?>? = null
-) : Parcelable
-
-@Parcelize
-data class SearchResponseItem(
-
     @Json(name = "life_span")
     val lifeSpan: String? = null,
 
