@@ -8,7 +8,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class BreedResponse(
 
-    @Json(name = "BreedResponse")
-    val breedResponse: List<Breed?>? = null
+    @Json(name = "Breed")
+    val breedResponse: Breed? = null
+
 ) : Parcelable
 
