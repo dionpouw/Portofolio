@@ -5,30 +5,47 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.jeflette.dogbreedapplication.R
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
+import com.jeflette.dogbreedapplication.databinding.FragmentDogDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DogDetailFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = DogDetailFragment()
-    }
+    private val args: DogDetailFragmentArgs by navArgs()
 
-    private lateinit var viewModel: DogDetailViewModel
+    private val viewModel: DogDetailViewModel by viewModels()
+    private var _binding: FragmentDogDetailBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_dog_detail, container, false)
+    ): View {
+        _binding = FragmentDogDetailBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DogDetailViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        binding.apply {
+            Glide.with(this@DogDetailFragment).load(args.breed.image?.url).into(dogImage)
+            dogBreedName.text = args.breed.name
+            dogBreedWeight.text = args.breed.weight?.metric
+            dogBreedLifeSpan.text = args.breed.lifeSpan
+            dogBreedTemperament.text = args.breed.temperament
+
+            fab.setOnClickListener {
+                viewModel.setDogFavorite(args.breed, !args.breed.isFavorite!!)
+            }
+        }
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        _binding = null
+    }
 }
