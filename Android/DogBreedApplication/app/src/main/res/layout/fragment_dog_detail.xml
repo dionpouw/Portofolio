@@ -43,7 +43,7 @@
                 android:textSize="@dimen/text_size_large"
                 app:layout_constraintStart_toEndOf="@+id/backButton"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Breed Details" />
+                android:text="@string/breed_details" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
