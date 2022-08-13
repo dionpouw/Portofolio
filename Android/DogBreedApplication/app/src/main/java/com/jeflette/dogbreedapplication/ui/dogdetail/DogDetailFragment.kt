@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.jeflette.dogbreedapplication.databinding.FragmentDogDetailBinding
@@ -38,8 +40,17 @@ class DogDetailFragment : Fragment() {
             dogBreedLifeSpan.text = args.breed.lifeSpan
             dogBreedTemperament.text = args.breed.temperament
 
+            backButton.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
             fab.setOnClickListener {
                 viewModel.setDogFavorite(args.breed, !args.breed.isFavorite!!)
+                Toast.makeText(
+                    requireContext(),
+                    if (args.breed.isFavorite!!) "Added to favorites" else "Removed from favorites",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
