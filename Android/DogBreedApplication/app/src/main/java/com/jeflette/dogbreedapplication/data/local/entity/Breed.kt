@@ -3,6 +3,7 @@ package com.jeflette.dogbreedapplication.data.local.entity
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.jeflette.dogbreedapplication.data.remote.response.SearchResponse
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
 
@@ -21,6 +22,9 @@ data class Breed(
 
     @Json(name = "temperament")
     val temperament: String? = null,
+
+    @Json(name = "origin")
+    val origin: String? = null,
 
     @Json(name = "name")
     val name: String? = null,
@@ -41,17 +45,26 @@ data class Breed(
     @Json(name = "height")
     val height: Height? = null,
 
-    @Json(name = "history")
-    val history: String? = null,
+    var isFavorite: Boolean? = false
 
-    @Json(name = "country_code")
-    val countryCode: String? = null,
+) : Parcelable {
 
-    @Json(name = "description")
-    val description: String? = null,
-
-    @Json(name = "origin")
-    val origin: String? = null,
-
-    var isFavorite: Boolean = false
-) : Parcelable
+    object ModelMapper {
+        fun from(listSearchResponse: List<SearchResponse>): List<Breed> {
+            return listSearchResponse.map {
+                Breed(
+                    lifeSpan = it.lifeSpan,
+                    breedGroup = it.breedGroup,
+                    temperament = it.temperament,
+                    name = it.name,
+                    weight = it.weight,
+                    bredFor = it.bredFor,
+                    id = it.id,
+                    referenceImageId = it.referenceImageId,
+                    height = it.height,
+                    isFavorite = false
+                )
+            }
+        }
+    }
+}
